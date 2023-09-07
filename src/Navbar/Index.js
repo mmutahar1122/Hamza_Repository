@@ -6,9 +6,7 @@ const Navbar = () => {
   <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <header id="header">
-    <div className="d-flex flex-column">
-
-      <div className="profile">
+    <div className="d-flex flex-column"> <div className="profile">
         <img src="assets/img/Brandify-01.jpg" alt="" className="img-fluid rounded-circle"/>
         <h1 className="text-light"><a href="index.html">Hamza Javaid</a></h1>
         <div className="social-links mt-3 text-center">
