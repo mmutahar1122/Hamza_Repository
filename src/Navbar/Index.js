@@ -63,7 +63,6 @@ const Navbar = () => {
     </div>
   </div>
 </nav> */}
-    <i className="bi bi-list mobile-nav-toggle  d-xl-none">i am toggler</i>
   <header id="header">
     <div className="d-flex flex-column"> <div className="profile">
         <img src="assets/img/Brandify-01.jpg" alt="" className="img-fluid rounded-circle"/>
@@ -77,6 +76,7 @@ const Navbar = () => {
         </div>
       </div>
 
+    <i className="bi bi-list mobile-nav-toggle  d-xl-none"></i>
       <nav id="navbar" className="nav-menu navbar" >
         <ul>
           <li><a href="#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></a></li>
