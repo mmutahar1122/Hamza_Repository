@@ -92,19 +92,22 @@
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
+    console.log("e",e);
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
-
+  
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
+    // console.log("e",e)
     if (select(this.hash)) {
       e.preventDefault()
 
       let body = select('body')
+      // console.log("body",body);
       if (body.classList.contains('mobile-nav-active')) {
         body.classList.remove('mobile-nav-active')
         let navbarToggle = select('.mobile-nav-toggle')
@@ -113,6 +116,7 @@
       }
       scrollto(this.hash)
     }
+    // alert("toggle button work");
   }, true)
 
   /**
