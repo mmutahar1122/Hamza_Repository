@@ -29,15 +29,17 @@ function App() {
      <Navbar/>
      <Home/>
      <About/>
-     <Facts/>
+     {/* <Facts/> */}
      <Skill/>
-     <Resume/>
+     {/* <Resume/> */}
      <Portfolio/>
      <Services/>
      <Testimonial/>
      {/* <Contact/> */}
      <Footer/>
      </BrowserRouter>
+
+     
     </>
   );
 }

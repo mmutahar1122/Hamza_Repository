@@ -1,99 +1,77 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
 const Navbar = () => {
+  
+  useEffect(() => {
+    const select = (el, all = false) => {
+      el = el.trim();
+      if (all) {
+        return [...document.querySelectorAll(el)];
+      } else {
+        return document.querySelector(el);
+      }
+    };
+
+    const on = (type, el, listener, all = false) => {
+      let selectEl = select(el, all);
+      if (selectEl) {
+        if (all) {
+          selectEl.forEach(e => e.addEventListener(type, listener));
+        } else {
+          selectEl.addEventListener(type, listener);
+        }
+      }
+      // Return a cleanup function
+      return () => {
+        if (selectEl) {
+          if (all) {
+            selectEl.forEach(e => e.removeEventListener(type, listener));
+          } else {
+            selectEl.removeEventListener(type, listener);
+          }
+        }
+      };
+    };
+
+    const cleanup = on('click', '.mobile-nav-toggle', function(e) {
+      console.log("e", e);
+      select('body').classList.toggle('mobile-nav-active');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
+
+    // Cleanup on component unmount
+    return cleanup;
+  }, []);
+
   return (
     <>
-  {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-   
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> */}
-  {/* <nav class="navbar"> */}
-  {/* <div class="container-fluid"></div> */}
- {/* <a class="navbar-brand" href="#">Navbar</a> */}
-    {/* <button class="navbar-toggler mobile-nav-toggle bi-list d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav> */}
+      <header id="header">
+        <div className="d-flex flex-column">
+          <div className="profile">
+            <img src="assets/img/Brandify-01.jpg" alt="" className="img-fluid rounded-circle" />
+            <h1 className="text-light"><a href="index.html">Hamza Javaid</a></h1>
+            <div className="social-links mt-3 text-center">
+              <a href="https://wa.me/923096382191" className="whatsapp"><i className="bx bxl-whatsapp"></i></a>
+              <a href="https://www.facebook.com/BRANDIFY1" className="facebook" target='_blank'><i className="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/ha_designer191" className="instagram" target='_blank'><i className="bx bxl-instagram"></i></a>
+            </div>
+          </div>
 
-{/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> */}
-    <i className="bi bi-list mobile-nav-toggle  d-xl-none">i am toggler</i>
-  <header id="header">
-    <div className="d-flex flex-column"> <div className="profile">
-        <img src="assets/img/Brandify-01.jpg" alt="" className="img-fluid rounded-circle"/>
-        <h1 className="text-light"><a href="index.html">Hamza Javaid</a></h1>
-        <div className="social-links mt-3 text-center">
-          <a href="https://wa.me/923096382191" className="whatsapp"><i className="bx bxl-whatsapp"></i></a>
-          <a href="https://www.facebook.com/BRANDIFY1" className="facebook" target='_blank'><i className="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/ha_designer191" className="instagram" target='_blank'><i className="bx bxl-instagram"></i></a>
-          {/* <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a> */}
-          {/* <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a> */}
+          <i className="bi bi-list mobile-nav-toggle d-xl-none"></i>
+          <nav id="navbar" className="nav-menu navbar">
+            <ul>
+              <li><a href="#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></a></li>
+              <li><a href="#about" className="nav-link scrollto"><i className="bx bx-user"></i> <span>About</span></a></li>
+              <li><a href="#resume" className="nav-link scrollto"><i className="bx bx-file-blank"></i> <span>Resume</span></a></li>
+              <li><a href="#portfolio" className="nav-link scrollto"><i className="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+              <li><a href="#services" className="nav-link scrollto"><i className="bx bx-server"></i> <span>Services</span></a></li>
+            </ul>
+          </nav>
         </div>
-      </div>
-
-      <nav id="navbar" className="nav-menu navbar" >
-        <ul>
-          <li><a href="#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" className="nav-link scrollto"><i className="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" className="nav-link scrollto"><i className="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" className="nav-link scrollto"><i className="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" className="nav-link scrollto"><i className="bx bx-server"></i> <span>Services</span></a></li>
-          {/* <li><a href="#contact" className="nav-link scrollto"><i className="bx bx-envelope"></i> <span>Contact</span></a></li> */}
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-
-
-    
-    </>)
+      </header>
+    </>
+  );
 }
 
 export default Navbar;

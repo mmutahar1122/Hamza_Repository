@@ -42,7 +42,7 @@ const Skill = () => {
 
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
-            <div className="progress">
+            {/* <div className="progress">
               <span className="skill">PHP <i className="val">80%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
@@ -54,10 +54,10 @@ const Skill = () => {
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
+            </div> */}
 
             <div className="progress">
-              <span className="skill">Photoshop <i className="val">55%</i></span>
+              <span className="skill">Photoshop<i className="val">100%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
               </div>

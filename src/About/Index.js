@@ -25,7 +25,7 @@ const About = () => {
             <div className="row">
               <div className="col-lg-6">
                 <ul>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>12 JULY 2004</span></li>
                   <li><i className="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.brandify.com</span></li>
                   <li><i className="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+92-309-6382191</span></li>
                   <li><i className="bi bi-chevron-right"></i> <strong>City:</strong> <span>Pakistan, Faisalabad</span></li>
@@ -34,8 +34,8 @@ const About = () => {
               <div className="col-lg-6">
                 <ul>
                   <li><i className="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Email:</strong> <span>Brandify@gmail.com</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSCS</span></li>
+                  <li><i className="bi bi-chevron-right"></i> <strong>Email:</strong> <span>brandify91@gmail.com</span></li>
                   <li><i className="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
