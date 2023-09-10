@@ -38,7 +38,7 @@ h6 {
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
-  visibility: hidden;
+  /* visibility: hidden; */
   opacity: 0;
   right: 15px;
   bottom: 15px;
@@ -56,15 +56,15 @@ h6 {
   line-height: 0;
 }
 
-.back-to-top:hover {
+/* .back-to-top:hover {
   background: #2eafec;
   color: #fff;
-}
+} */
 
-.back-to-top.active {
+/* .back-to-top.active {
   visibility: visible;
-  opacity: 1;
-}
+  opacity: 100%;
+} */
 
 /*--------------------------------------------------------------
 # Header

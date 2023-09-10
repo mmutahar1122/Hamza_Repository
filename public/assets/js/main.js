@@ -71,7 +71,7 @@
       behavior: 'smooth'
     })
   }
-
+ 
   /**
    * Back to top button
    */
@@ -91,12 +91,14 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
-    console.log("e",e);
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+
+//   const navToggle=document.getElementsByClassName('.mobile-nav-toggle');
+//  onclick(navToggle,function(){
+//   document.getElementById("navbar").style.width="35%";
+//   alert("i am working")
+
+//  })
+ 
   
   /**
    * Scrool with ofset on links with a class name .scrollto
